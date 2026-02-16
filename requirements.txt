@@ -1,0 +1,34 @@
+# Telegram Bot Framework
+python-telegram-bot==20.7
+
+# Telethon for fetching message history
+telethon==1.34.0
+
+# Google Gemini AI
+google-generativeai>=0.8.0
+
+# Database
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+alembic==1.13.1
+
+# Vector Database & Embeddings
+chromadb==0.4.22
+sentence-transformers>=3.0.0
+
+# Environment & Configuration
+python-dotenv==1.0.0
+
+# Async HTTP
+aiohttp==3.9.1
+
+# Data Processing
+pandas
+numpy<2.0
+
+# Text Processing
+rapidfuzz==3.6.1  # For fuzzy name matching
+langdetect==1.0.9  # For language detection
+
+# Utilities
+tenacity==8.2.3  # For retry logic
