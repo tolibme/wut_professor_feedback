@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite
+*.log
+.env
+.venv/
+.vscode/
+.idea/
+.git/
+.gitignore
+chroma_data/
+logs/
+collector_session.session

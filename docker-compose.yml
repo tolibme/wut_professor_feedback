@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: wut_feedback_bot
+    env_file:
+      - .env
+    depends_on:
+      - db
+    volumes:
+      - ./chroma_data:/app/chroma_data
+      - ./logs:/app/logs
+      - ./collector_session.session:/app/collector_session.session
+    command: ["python", "main.py", "--mode", "collector", "--collector-mode", "hybrid"]
+    restart: unless-stopped
+
+  db:
+    image: postgres:16
+    container_name: wut_feedback_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: wut_feedback
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

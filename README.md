@@ -61,6 +61,29 @@ Required environment variables:
 python scripts/init_db.py
 ```
 
+## 🐳 Docker
+
+### Build and Run
+
+```bash
+docker compose up --build
+```
+
+This starts:
+- `app` running the userbot collector in hybrid mode
+- `db` PostgreSQL database
+
+### Run Query Bot Instead
+
+```bash
+docker compose run --rm app python main.py --mode query
+```
+
+### Notes
+- Ensure your `.env` has a valid `DATABASE_URL` that points to the Docker DB:
+    `postgresql://postgres:postgres@db:5432/wut_feedback`
+- The Telethon session file is mounted from `collector_session.session`.
+
 ### 4. First Run - Authenticate Your Account
 
 On first run, you'll need to authenticate your Telegram account:
